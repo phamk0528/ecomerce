@@ -6,3 +6,184 @@ body {
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+body {
+  margin: 0;
+}
+
+header {
+  h2 {
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 42px;
+  }
+  p {
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 550px;
+  }
+  img {
+    width: 70px;
+  }
+}
+
+.header-container {
+  width: 100%;
+  margin: 0;
+  padding: 3rem 6rem;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.header-heading {
+  color: #424242;
+  text-align: center;
+  letter-spacing: 0.06rem;
+  margin-bottom: 12px;
+}
+
+.heading-input {
+  border: 0;
+  height: 60px;
+  padding: 0 28px;
+  font-size: 18px;
+  border-radius: 999em;
+  box-shadow: 0 20px 30px 0 rgba(16, 36, 94, 0.2),
+    inset 0 -8px 0 0 rgba(103, 117, 161, 0.08);
+}
+
+.list-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.result-stats {
+  max-width: none;
+  margin: 20px 0 0;
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 16px;
+  text-align: right;
+}
+.multi-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .left-col {
+    width: 240px;
+    h2 {
+      margin: 40px 0 12px;
+    }
+    label {
+      font-weight: normal;
+    }
+  }
+  .right-col {
+    width: calc(100% - 260px);
+  }
+}
+
+.stat-styles {
+  max-width: none;
+  margin: 30px 0 0;
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 16px;
+  text-align: right;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  overflow: hidden;
+  grid-gap: 15px;
+  padding: 10px;
+}
+
+.filter {
+  min-width: 250px;
+  margin-top: 10px;
+}
+
+.item {
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0 0;
+  background: #eaeaea;
+  position: relative;
+  transition: all ease 0.2s;
+}
+
+.item-key {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.item-key .value {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre {
+  background: black;
+  max-width: 300px;
+  overflow: scroll;
+}
+
+/******* EXPAND-COLLAPSE STYLES *******/
+.collapse {
+  overflow: hidden;
+  max-height: 200px;
+}
+
+.expand-button-container button {
+  margin: 10px;
+  color: #1890ff;
+  border: 0;
+  background: inherit;
+  cursor: pointer;
+}
+
+.expand-button-container {
+  width: 100%;
+  background: linear-gradient(180deg, #eaeaea, rgba(255, 255, 255, 0.8));
+}
+
+/******* TOOLTIP STYLES *******/
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+  max-width: 450px;
+  min-width: fit-content;
+  padding: 10px;
+  overflow-x: scroll;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: auto;
+  }
+}
