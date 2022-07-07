@@ -101,7 +101,7 @@ const Home: React.FC = () => {
             filterLabel="Retail Price"
             showHistogram
             range={{
-              start: 10,
+              start: 30,
               end: 10000,
             }}
           />
@@ -124,7 +124,7 @@ const Home: React.FC = () => {
             }}
             render={({ data }) => (
               <SimpleGrid columns={4} spacing={"10px"}>
-                <Modals isOpen={isOpen} onOpen={onOpen} onClose={onClose} item={selectedItem} />
+                <Modals isOpen={isOpen} onOpen={onOpen} onClose={onClose} item={selectedItem} data={data} />
                 {data.map((item) => (<>
 
 

@@ -19,10 +19,12 @@ import {
   Modal,
   ModalOverlay,
 } from '@chakra-ui/react';
+import ProductAddToCart from '@components/cards/productCard';
+import ProductModal from '@components/cards/productModal';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
 
-export default function Modals({ isOpen, onOpen, onClose, item }: any) {
+export default function Modals({ isOpen, onOpen, onClose, item, data }: any) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl" width="100px">
       <ModalOverlay />
@@ -37,7 +39,7 @@ export default function Modals({ isOpen, onOpen, onClose, item }: any) {
                 rounded={'md'}
                 alt={'product image'}
                 src={item?.image[0]}
-                fit={'cover'}
+                fit={'contain'}
                 align={'center'}
                 w={'100%'}
                 h={{ base: '100%', sm: '400px', lg: '450px' }}
@@ -67,7 +69,7 @@ export default function Modals({ isOpen, onOpen, onClose, item }: any) {
                     borderColor={useColorModeValue('gray.200', 'gray.600')}
                   />
                 }>
-                <VStack spacing={{ base: 4, sm: 6 }}>
+                {/* <VStack spacing={{ base: 4, sm: 6 }}>
                   <Text
                     color={useColorModeValue('gray.500', 'gray.400')}
                     fontSize={'2xl'}
@@ -81,7 +83,7 @@ export default function Modals({ isOpen, onOpen, onClose, item }: any) {
                     maxime modi nam officiis porro, quae, quisquam quos
                     reprehenderit velit? Natus, totam.
                   </Text>
-                </VStack>
+                </VStack> */}
                 <Box>
                   <Text
                     fontSize={{ base: '16px', lg: '18px' }}
@@ -184,6 +186,13 @@ export default function Modals({ isOpen, onOpen, onClose, item }: any) {
                 <Text>2-3 business days delivery</Text>
               </Stack>
             </Stack>
+          </SimpleGrid>
+          <SimpleGrid columns={3} spacing={"10px"}>
+            {data.map((item) => (<>
+
+
+              <ProductModal item={item} /></>
+            ))}
           </SimpleGrid>
         </Container>
       </ModalContent></Modal>

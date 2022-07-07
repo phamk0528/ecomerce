@@ -56,7 +56,7 @@ function Rating({ rating, numReviews }: RatingProps) {
     );
 }
 
-function ProductAddToCart({ item, onClick }: any) {
+function ProductModal({ item, onClick }: any) {
     return (
         <Flex p={"10px"} alignItems="center" justifyContent="center" onClick={() => onClick()}>
             <Box
@@ -66,7 +66,7 @@ function ProductAddToCart({ item, onClick }: any) {
                 rounded="lg"
                 shadow="lg"
                 position="relative"
-                minHeight={"500px"}>
+                minHeight={"400px"}>
                 {data.isNew && (
                     <Circle
                         size="10px"
@@ -125,25 +125,11 @@ function ProductAddToCart({ item, onClick }: any) {
                             {item?.retail_price}
                         </Box>
                     </Flex>
-                    <div>
-                        {Array.isArray(item?.categories) ? (
-                            item.categories.map((category: any) => (
-                                <Tag>{category}</Tag>
-                            ))
-                        ) : (
-                            <Tag>
-                                <p
-                                    dangerouslySetInnerHTML={{
-                                        __html: item?.categories,
-                                    }}
-                                />
-                            </Tag>
-                        )}
-                    </div>
+
                 </Box>
             </Box>
         </Flex>
     );
 }
 
-export default ProductAddToCart;
+export default ProductModal;
