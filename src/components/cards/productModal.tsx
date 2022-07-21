@@ -9,7 +9,7 @@ import {
     chakra,
     Tooltip,
 } from '@chakra-ui/react';
-import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
+import { BsFillBagPlusFill, BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import { Tag } from 'antd';
 
@@ -58,77 +58,107 @@ function Rating({ rating, numReviews }: RatingProps) {
 
 function ProductModal({ item, onClick }: any) {
     return (
-        <Flex p={"10px"} alignItems="center" justifyContent="center" onClick={() => onClick()}>
-            <Box
-                bg={useColorModeValue('white', 'gray.800')}
-                maxW="100%"
-                borderWidth="1px"
-                rounded="lg"
-                shadow="lg"
-                position="relative"
-                minHeight={"400px"}>
-                {data.isNew && (
-                    <Circle
-                        size="10px"
-                        position="absolute"
-                        top={2}
-                        right={2}
-                        bg="red.200"
-                    />
-                )}
+        <Flex p={"1px"} alignItems="center" justifyContent="center" onClick={() => onClick()}>
+        <Box
+            bg={useColorModeValue('white', 'gray.800')}
+            maxW="100%"
+            borderWidth="1px"
+            rounded="lg"
+            shadow="lg"
+            position="relative"
+        >
+            {/* {data.isNew && ( */}
+                <Circle
+                    size="40px"
+                    position="absolute"
+                    top={2}
+                    right={2}
+                    bg="#F1C411"
+                    color='white'
+                    rounded="full" px="2" fontSize="0.8em" 
+                >-20%</Circle>
 
-                {item?.image && item?.image[0] && <Image
-                    src={item?.image[0]}
-                    alt={`Picture of ${item?.product_name}`}
-                    roundedTop="lg"
-                    alignSelf={'center'}
-                    w="100%"
-                    height={"250px"}
-                    objectFit='contain'
-                />}
 
-                <Box p="6">
-                    <Box d="flex" alignItems="baseline">
+            {/* )} */}
 
-                        <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-                            {item?.brand}
-                        </Badge>
+            {item?.image && item?.image[0] && <Image
+                src={item?.image[0]}
+                alt={`Picture of ${item?.product_name}`}
+                roundedTop="lg"
+                alignSelf={'center'}
+                w="100%"
+                height={"120px"}
+                objectFit='contain'
+            />}
 
-                    </Box>
-                    <Flex mt="1" justifyContent="space-between" alignContent="center">
-                        <Box
-                            fontSize="2xl"
-                            fontWeight="semibold"
-                            as="h4"
-                            lineHeight="tight"
-                            isTruncated>
-                            {item?.product_name}
-                        </Box>
-                        <Tooltip
-                            label="Add to cart"
-                            bg="white"
-                            placement={'top'}
-                            color={'gray.800'}
-                            fontSize={'1.2em'}>
-                            <chakra.a href={'#'} display={'flex'}>
-                                <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
-                            </chakra.a>
-                        </Tooltip>
-                    </Flex>
+            <Box p="6">
+                <Box d="flex" alignItems="baseline">
 
-                    <Flex justifyContent="space-between" alignContent="center">
-                        <Rating rating={data.rating} numReviews={data.numReviews} />
-                        <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-                            <Box as="span" color={'gray.600'} fontSize="lg">
-                                £
-                            </Box>
-                            {item?.retail_price}
-                        </Box>
-                    </Flex>
+                    <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                        {item?.brand}
+                    </Badge>
 
                 </Box>
+
+               
+                <Flex mt="1" justifyContent="space-between" alignContent="center" flexDir="column">
+                    <Box
+                        fontSize="13px"
+                        fontWeight="semibold"
+                        
+                        lineHeight="tight"
+                        isTruncated>
+                        {item?.product_name}
+                    </Box>
+                   
+                </Flex>
+                <Flex justifyContent="space-between" alignContent="center" flexDir='row'>
+                    {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
+                    <Box fontSize="18px"color={'red.500'}>
+                        <Box as="span" color={'red.500'} fontSize="15px">
+                            $
+                        </Box>
+                        {item?.retail_price}
+                    </Box>
+                  
+                </Flex>
+                <Box
+                        shadow={'md'}
+                        borderRadius='10px'
+                       
+                        py={1}
+                       
+                        fontSize={'1em'}
+                        display='flex'
+                        justifyContent={'center'}
+                        alignContent="center" 
+                        alignItems='center'
+                        flexDir='row' 
+                        bg='green'
+                        color="white">
+                   
+                            <Icon color="white" as={BsFillBagPlusFill} h={4} w={5} alignSelf={'center'} />
+                      Cart
+                    </Box>
+             
+                {/* <div>
+                    {Array.isArray(item?.categories) ? (
+                        item.categories.map((category: any) => (
+                            <Tag>{category}</Tag>
+                        ))
+                    ) : (
+                        <Tag>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html: item?.categories,
+                                }}
+                            />
+                        </Tag>
+                    )}
+                </div> */}
             </Box>
-        </Flex>
+        </Box>
+    </Flex>
     );
 }
 

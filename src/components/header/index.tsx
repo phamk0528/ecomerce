@@ -27,7 +27,7 @@ export function Header() {
 
   return (
     <Box position="sticky"
-      top={{ base: "0px" }} zIndex="9999">
+      top={{ base: "0px" }}  zIndex="999">
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}

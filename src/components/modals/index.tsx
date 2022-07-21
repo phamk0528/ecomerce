@@ -18,6 +18,8 @@ import {
   ModalContent,
   Modal,
   ModalOverlay,
+  ModalHeader,
+  ModalCloseButton,
 } from '@chakra-ui/react';
 import ProductAddToCart from '@components/cards/productCard';
 import ProductModal from '@components/cards/productModal';
@@ -26,9 +28,11 @@ import { MdLocalShipping } from 'react-icons/md';
 
 export default function Modals({ isOpen, onOpen, onClose, item, data }: any) {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="xl" width="100px">
+    <Modal isOpen={isOpen} onClose={onClose} size='full'  zIndex="9999">
       <ModalOverlay />
-      <ModalContent maxW={'55%'}>
+      <ModalContent maxW={'100%'}>
+   
+          <ModalCloseButton />
         <Container maxW={'100%'}>
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
@@ -69,7 +73,7 @@ export default function Modals({ isOpen, onOpen, onClose, item, data }: any) {
                     borderColor={useColorModeValue('gray.200', 'gray.600')}
                   />
                 }>
-                {/* <VStack spacing={{ base: 4, sm: 6 }}>
+                <VStack spacing={{ base: 4, sm: 6 }}>
                   <Text
                     color={useColorModeValue('gray.500', 'gray.400')}
                     fontSize={'2xl'}
@@ -83,7 +87,7 @@ export default function Modals({ isOpen, onOpen, onClose, item, data }: any) {
                     maxime modi nam officiis porro, quae, quisquam quos
                     reprehenderit velit? Natus, totam.
                   </Text>
-                </VStack> */}
+                </VStack>
                 <Box>
                   <Text
                     fontSize={{ base: '16px', lg: '18px' }}
@@ -187,7 +191,7 @@ export default function Modals({ isOpen, onOpen, onClose, item, data }: any) {
               </Stack>
             </Stack>
           </SimpleGrid>
-          <SimpleGrid columns={3} spacing={"10px"}>
+          <SimpleGrid columns={2} >
             {data.map((item) => (<>
 
 
