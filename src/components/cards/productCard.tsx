@@ -58,7 +58,7 @@ function Rating({ rating, numReviews }: RatingProps) {
 
 function ProductAddToCart({ item, onClick }: any) {
     return (
-        <Flex p={"10px"} alignItems="center" justifyContent="center" onClick={() => onClick()}>
+        <Flex p={"1px"} alignItems="center" justifyContent="center" onClick={() => onClick()}>
             <Box
                 bg={useColorModeValue('white', 'gray.800')}
                 maxW="100%"
@@ -66,7 +66,7 @@ function ProductAddToCart({ item, onClick }: any) {
                 rounded="lg"
                 shadow="lg"
                 position="relative"
-                minHeight={"500px"}>
+            >
                 {data.isNew && (
                     <Circle
                         size="10px"
@@ -125,7 +125,7 @@ function ProductAddToCart({ item, onClick }: any) {
                             {item?.retail_price}
                         </Box>
                     </Flex>
-                    <div>
+                    {/* <div>
                         {Array.isArray(item?.categories) ? (
                             item.categories.map((category: any) => (
                                 <Tag>{category}</Tag>
@@ -139,7 +139,7 @@ function ProductAddToCart({ item, onClick }: any) {
                                 />
                             </Tag>
                         )}
-                    </div>
+                    </div> */}
                 </Box>
             </Box>
         </Flex>
