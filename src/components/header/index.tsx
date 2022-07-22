@@ -106,6 +106,7 @@ export const Header = ()=> {
          px={{ base: 4 }}
          borderBottom={1}
          borderStyle={'solid'}
+         minH={'100px'}
        
          alignItems="center">
         <DataSearch
