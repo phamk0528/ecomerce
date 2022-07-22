@@ -33,13 +33,13 @@ import {
   
   export default function ModalFilter({ isOpen, onOpen, onClose, item, data }: any) {
     return (
-      <Drawer placement='left' isOpen={isOpen} onClose={onClose} size='full'  zIndex="9999" >
+      <Drawer placement='left' isOpen={isOpen} onClose={onClose} size='full'  zIndex="9999">
          <DrawerOverlay />
        
-        {/* <DrawerContent maxW={'100%'}> */}
+        <DrawerContent maxW={'100%'} overflow='auto'>
      
         <DrawerCloseButton />
-          <Container maxW={'100%'} py="20px" overflowY={'auto'}>
+          <Container maxW={'100%'} py="20px">
           <MultiList
                             componentId="categories"
                             dataField="categories.keyword"
@@ -75,6 +75,6 @@ import {
                             }}
                         />
           </Container>
-       </Drawer>
+        </DrawerContent></Drawer>
     );
   }
