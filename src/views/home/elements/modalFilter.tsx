@@ -36,7 +36,7 @@ import {
       <Drawer placement='left' isOpen={isOpen} onClose={onClose} size='full'  zIndex="9999">
          <DrawerOverlay />
        
-        <DrawerContent maxW={'100%'}>
+        {/* <DrawerContent maxW={'100%'}> */}
      
         <DrawerCloseButton />
           <Container maxW={'100%'} py="20px">
@@ -75,6 +75,6 @@ import {
                             }}
                         />
           </Container>
-        </DrawerContent></Drawer>
+       </Drawer>
     );
   }
