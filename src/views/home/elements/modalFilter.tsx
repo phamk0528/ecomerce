@@ -36,7 +36,7 @@ import {
       <Drawer placement='left' isOpen={isOpen} onClose={onClose} size='full'  zIndex="9999">
          <DrawerOverlay />
        
-        <DrawerContent maxW={'100%'} overflow='auto'>
+        <DrawerContent maxW={'100%'} overflow='auto' pb="20px">
      
         <DrawerCloseButton />
           <Container maxW={'100%'} py="20px">
