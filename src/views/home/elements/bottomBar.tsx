@@ -3,9 +3,12 @@ import { Box, Button, IconButton } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { AiOutlineMenu ,AiOutlineSearch,AiOutlineHome} from "react-icons/ai";
 import { BsBag, BsPerson } from "react-icons/bs";
-
+import { useRecoilState } from 'recoil';
+import { isOpenSearch } from "@recoil/atoms";
 
 export const BottomBar = ({ ...rest }) => {
+  const [isOpenSearchBar, setIsOpenSearchBar] = useRecoilState(isOpenSearch);
+
     return (
         <Box
 
@@ -17,7 +20,7 @@ export const BottomBar = ({ ...rest }) => {
 
             <Button leftIcon={<AiOutlineMenu />} colorScheme='white' variant='solid' color='black'/>
 
-            <Button leftIcon={<AiOutlineSearch />} colorScheme='white' variant='solid' color='black'/>
+            <Button onClick={()=>{setIsOpenSearchBar(!isOpenSearchBar)}} leftIcon={<AiOutlineSearch />} colorScheme='white' variant='solid' color='black'/>
             <Button leftIcon={<AiOutlineHome />} colorScheme='white' variant='solid' color='black'/>
             <Button leftIcon={<BsBag />} colorScheme='white' variant='solid' color='black'/>
             <Button leftIcon={<BsPerson />} colorScheme='white' variant='solid' color='black'/>

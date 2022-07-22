@@ -27,28 +27,7 @@ export const ListProduct = ({ ...rest }) => {
     const [selectedItem, setSelectedItems] = useState({})
     return (
         <>
-            <ReactiveBase
-                app="quoc-app-test"
-                credentials="A6wtvxKW0:6d20c42f-0fa8-4cac-9274-7b1362843856"
-                enableAppbase
-                url="https://fat-easter-cmbbjuf-arc.searchbase.io"
-                className="search-app"
-                mapKey="AIzaSyA9JzjtHeXg_C_hh_GdTBdLxREWdj3nsOU"
-
-                theme={{
-                    colors: {
-                        primaryColor: '#FF307A',
-                    },
-                }}
-                style={{
-                    backgroundColor: '#fff',
-                    // padding: '40px',
-                    borderRadius: '2px',
-                    width: "100%",
-                    overflowX: 'hidden'
-                    // textAlign: 'left',
-                }}
-            >
+    
                 {/* <header className="header-container">
                     <h2 className="header-heading">
                         BCX PRODUCT STORE
@@ -138,7 +117,7 @@ export const ListProduct = ({ ...rest }) => {
 
                     </div>
                 </div>
-            </ReactiveBase>
+         
         </>
     );
 };
