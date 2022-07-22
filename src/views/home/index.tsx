@@ -37,7 +37,7 @@ export const HomeView = ({ ...rest }) => {
                     // padding: '40px',
                     borderRadius: '2px',
                     width: "100%",
-                    overflowX: 'hidden'
+                    // overflowX: 'hidden'
                     // textAlign: 'left',
                 }}
             >

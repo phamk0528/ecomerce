@@ -31,7 +31,7 @@ export const Header = ()=> {
   console.log("isOpenSearchBar",isOpenSearchBar)
   return (
     <Box position="sticky"
-      top={{ base: "0px" }}  zIndex="999">
+      top={{ base: "0px" }}  zIndex="999" bg="white">
         {
           !isOpenSearchBar ?    <Flex
         
