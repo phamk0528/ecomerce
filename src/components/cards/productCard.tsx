@@ -117,14 +117,24 @@ function ProductAddToCart({ item, onClick }: any) {
                     />}
 
                     <Box p="6">
-                        <Box d="flex" alignItems="baseline">
 
-                            <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+
+                        <Flex mt="1" justifyContent="space-between" alignContent="center" flexDir="column">
+                            <Box
+                                fontSize="13px"
+                                fontWeight="semibold"
+
+                                lineHeight="tight"
+                                bgColor={'pink.200'}
+                                color='white'
+                                px="2px"
+                                textAlign={"center"}
+                                borderRadius={"5px"}
+                            >
                                 {item?.brand}
-                            </Badge>
+                            </Box>
 
-                        </Box>
-
+                        </Flex>
 
                         <Flex mt="1" justifyContent="space-between" alignContent="center" flexDir="column">
                             <Box
