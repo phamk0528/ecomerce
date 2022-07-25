@@ -1,4 +1,5 @@
 export enum Atoms {
   Counter = "Counter",
-  isOpenSearch='isOpenSearch'
+  isOpenSearch = "isOpenSearch",
+  MyCart = "MyCart",
 }
