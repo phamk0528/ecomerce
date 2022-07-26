@@ -42,7 +42,7 @@ export const Infomation = ({ isShow, setIsOpen }: Props) => {
 
                     <DrawerHeader borderBottomWidth="1px" fontSize={"18px"} color={"#A68340"}>
 
-                        <Text fontSize='20px' mb={1} color="#A68340" textAlign={"center"}>{`Oder Placed`}</Text>
+                        <Text fontSize='20px' mb={1} color="#A68340" textAlign={"center"}>{`Order Placed`}</Text>
                     </DrawerHeader>
                     <DrawerBody alignItems={"center"} display={"flex"} flexDirection={"column"} >
                         <Icon
